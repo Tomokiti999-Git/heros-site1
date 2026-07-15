@@ -171,43 +171,131 @@
 
 <section class="pt-32 pb-24 max-w-2xl mx-auto px-5 md:px-8">
   <p class="eyebrow mb-3">SCHEDULE</p>
-  <h1 class="font-display font-900 text-2xl md:text-3xl text-navy mb-4 leading-snug">体験授業の日程調整</h1>
-  <p class="text-sm text-ink-soft leading-relaxed mb-10">
-    お問い合わせいただきありがとうございます。下記フォームにお子様の情報と体験授業のご希望日時をご入力ください。
-    確認後、担当者よりご連絡いたします。
+  <h1 class="font-display font-900 text-2xl md:text-3xl text-navy mb-4 leading-snug">個別相談会・無料体験授業のお申し込み</h1>
+  <p class="text-sm text-ink-soft leading-relaxed mb-8">
+    お問い合わせいただきありがとうございます。下記フォームにご記入のうえ送信してください。確認後、担当者よりご連絡いたします。
   </p>
+
+  <div class="bg-sky rounded-3xl p-6 mb-10 text-sm text-ink-soft leading-relaxed">
+    <p class="font-display font-700 text-navy mb-2">"個別相談会" "無料体験授業" についてのお問合せの方へ</p>
+    <ul class="space-y-1.5 list-disc pl-5">
+      <li>お子様と一緒にご来校ください。</li>
+      <li>所要時間は30～60分です。</li>
+      <li>見学・相談日は日祝を除いた3日後から選択が可能です。</li>
+      <li>土曜日は教室によりお休みを頂いている場合があります。ご了承ください。</li>
+      <li>年末年始など大型連休中のお申し込みは、連休明けの対応となります。ご了承ください。</li>
+      <li>見学・相談希望日は教室からの返信により確定となります。</li>
+      <li>入力された電話番号とメールアドレスにお間違いのないようお願いします。</li>
+    </ul>
+  </div>
 
   <div id="noIdWarning" class="hidden bg-coral/10 border border-coral/30 rounded-2xl p-5 mb-8 text-sm" style="color:#B94A3A;">
     このページのURLに問い合わせIDが含まれていません。お手数ですが、お問い合わせ後に届いたメール内のリンクからアクセスしてください。
   </div>
 
   <form id="scheduleForm" class="bg-white rounded-3xl card-shadow p-6 md:p-10"
-        action="https://script.google.com/macros/s/AKfycbyOEuz2TxWW5eR7WE6iHirKZJddtl7gjSOCeqCpJaKr7iaxoSSipcv_3sq8QzEBjf-ZHw/exec"
+        action="https://script.google.com/macros/s/【GASウェブアプリのデプロIDに差し替えてください。index.htmlと同じURLを使います。】/exec"
         method="POST" target="hidden_iframe_s" onsubmit="onScheduleSubmit()">
     <input type="hidden" name="action" value="schedule">
     <input type="hidden" name="id" id="inquiryId" value="">
 
     <div id="scheduleFields">
-      <div class="grid sm:grid-cols-2 gap-5 mb-5">
-        <div>
-          <label class="text-xs font-display font-700 text-navy block mb-2">お子様のお名前<span class="text-coral">*</span></label>
-          <input name="studentName" required type="text" placeholder="山田 花子" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
-        </div>
-        <div>
-          <label class="text-xs font-display font-700 text-navy block mb-2">学年<span class="text-coral">*</span></label>
-          <select name="grade" required class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
-            <option>小学生</option><option>中学1年</option><option>中学2年</option><option>中学3年</option><option>高校生</option>
-          </select>
-        </div>
-      </div>
+
       <div class="mb-5">
-        <label class="text-xs font-display font-700 text-navy block mb-2">学校名</label>
+        <label class="text-xs font-display font-700 text-navy block mb-2">お子さまの氏名<span class="text-coral">*</span></label>
+        <input name="studentName" required type="text" placeholder="山田 花子" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+      </div>
+
+      <div class="mb-5">
+        <label class="text-xs font-display font-700 text-navy block mb-2">学校名（任意）</label>
         <input name="school" type="text" placeholder="〇〇市立〇〇中学校" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
       </div>
-      <div class="mb-8">
-        <label class="text-xs font-display font-700 text-navy block mb-2">希望日時<span class="text-coral">*</span></label>
-        <input name="preferredTime" required type="text" placeholder="例：平日18時以降、土曜午前など" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+
+      <div class="mb-5">
+        <label class="text-xs font-display font-700 text-navy block mb-2">学年<span class="text-coral">*</span></label>
+        <select name="grade" required class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+          <option value="">選択してください</option>
+          <option>小学1年</option><option>小学2年</option><option>小学3年</option>
+          <option>小学4年</option><option>小学5年</option><option>小学6年</option>
+          <option>中学1年</option><option>中学2年</option><option>中学3年</option>
+          <option>高校1年</option><option>高校2年</option><option>高校3年</option>
+          <option>その他</option>
+        </select>
       </div>
+
+      <div class="mb-5">
+        <label class="text-xs font-display font-700 text-navy block mb-2">住所<span class="text-coral">*</span></label>
+        <input name="address" required type="text" placeholder="埼玉県戸田市〇〇1-2-3" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="text-xs font-display font-700 text-navy block mb-2">メールアドレス<span class="text-coral">*</span></label>
+          <input name="email" required type="email" placeholder="example@mail.com" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+        </div>
+        <div>
+          <label class="text-xs font-display font-700 text-navy block mb-2">電話番号<span class="text-coral">*</span></label>
+          <input name="phone" required type="tel" placeholder="090-1234-5678" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+        </div>
+      </div>
+
+      <div class="mb-8">
+        <label class="text-xs font-display font-700 text-navy block mb-3">見学・相談希望日（任意）</label>
+        <p class="text-xs text-ink-soft mb-4">第1〜第3希望まで、日付と時間帯（14:00〜21:00／30分刻み）をご入力ください。</p>
+
+        <div class="space-y-4">
+          <div class="bg-sky rounded-2xl p-4">
+            <p class="font-display font-700 text-xs text-navy mb-3">第1希望</p>
+            <div class="grid grid-cols-2 gap-3">
+              <input name="pref1Date" type="date" class="pref-date w-full border border-blue/15 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue">
+              <select name="pref1Time" class="w-full border border-blue/15 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue">
+                <option value="">時間を選択</option>
+                <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+                <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
+                <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
+                <option>20:00</option><option>20:30</option><option>21:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="bg-sky rounded-2xl p-4">
+            <p class="font-display font-700 text-xs text-navy mb-3">第2希望</p>
+            <div class="grid grid-cols-2 gap-3">
+              <input name="pref2Date" type="date" class="pref-date w-full border border-blue/15 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue">
+              <select name="pref2Time" class="w-full border border-blue/15 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue">
+                <option value="">時間を選択</option>
+                <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+                <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
+                <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
+                <option>20:00</option><option>20:30</option><option>21:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="bg-sky rounded-2xl p-4">
+            <p class="font-display font-700 text-xs text-navy mb-3">第3希望</p>
+            <div class="grid grid-cols-2 gap-3">
+              <input name="pref3Date" type="date" class="pref-date w-full border border-blue/15 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue">
+              <select name="pref3Time" class="w-full border border-blue/15 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-blue">
+                <option value="">時間を選択</option>
+                <option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option>
+                <option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option>
+                <option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option>
+                <option>20:00</option><option>20:30</option><option>21:00</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <label class="text-xs font-display font-700 text-navy block mb-2">ご連絡可能時間帯（任意）</label>
+        <input name="availableTime" type="text" placeholder="例：平日18時以降、土曜終日など" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue">
+      </div>
+
+      <div class="mb-8">
+        <label class="text-xs font-display font-700 text-navy block mb-2">お問い合わせ詳細内容（任意）</label>
+        <textarea name="details" rows="4" placeholder="ご質問やご要望があればご記入ください" class="w-full border border-blue/15 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue"></textarea>
+      </div>
+
       <button type="submit" class="w-full btn-primary rounded-full py-4 text-base">送信する</button>
     </div>
 
@@ -228,6 +316,18 @@
   } else {
     document.getElementById('noIdWarning').classList.remove('hidden');
   }
+
+  // 見学・相談希望日：日祝を除いた3日後以降を選択可能にする（祝日は簡易対応のため未考慮。土日は日曜のみ除外）
+  (function setMinDate(){
+    let count = 0;
+    let d = new Date();
+    while (count < 3) {
+      d.setDate(d.getDate() + 1);
+      if (d.getDay() !== 0) count++; // 日曜(0)以外をカウント
+    }
+    const minStr = d.toISOString().split('T')[0];
+    document.querySelectorAll('.pref-date').forEach(el => el.setAttribute('min', minStr));
+  })();
 
   let scheduleSubmitted = false;
   function onScheduleSubmit(){
